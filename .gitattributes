@@ -1,0 +1,2 @@
+# Keeping eslint happy on Windows machines
+*.js text eol=lf
