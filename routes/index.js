@@ -1,9 +1,19 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const { snakeInfo, start, end } = require('../controllers/game_controls');
+const { move } = require('../controllers/snake_brain');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express-Template' });
-});
+const router = express.Router();
+
+/* Get Battlesnake */
+router.get('/', snakeInfo);
+
+/* Start Match Notificaiton */
+router.post('/start', start);
+
+/* Move Snake */
+router.post('/move', move);
+
+/* End Match Notification */
+router.post('/end', end);
 
 module.exports = router;

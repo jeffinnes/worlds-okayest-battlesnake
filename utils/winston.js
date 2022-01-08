@@ -14,7 +14,7 @@ const logger = winston.createLogger({
       filename: './logs/error/error.log',
       handleExceptions: true,
       maxsize: 5242880, // 5MB
-      maxFiles: 30,
+      maxFiles: 2,
       tailable: true,
       zippedArchive: true,
     }),
@@ -23,7 +23,7 @@ const logger = winston.createLogger({
       filename: './logs/info/info.log',
       handleExceptions: true,
       maxsize: 5242880, // 5MB
-      maxFiles: 10,
+      maxFiles: 4,
       tailable: true,
       zippedArchive: true,
       format: winston.format.combine(
