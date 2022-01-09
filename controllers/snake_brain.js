@@ -1,4 +1,4 @@
-const { logger } = require('../utils/winston');
+const logger = require('../utils/winston');
 
 function move(req, res) {
   const possibleMoves = [

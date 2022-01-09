@@ -1,4 +1,4 @@
-const { logger } = require('../utils/winston');
+const logger = require('../utils/winston');
 
 function snakeInfo(req, res) {
   res.json(
