@@ -23,20 +23,28 @@ function move(req, res) {
   const my = req.body.you;
   const { game, turn, board } = req.body;
 
-  // Don't fold my head inside out
-  if (my.head.y < my.body[1].y) {
-    // Up
-    possibleMoves[0].safe = false;
-  } else if (my.head.y > my.body[1].y) {
-    // Down
-    possibleMoves[1].safe = false;
-  } else if (my.head.x > my.body[1].x) {
-    // Left
-    possibleMoves[2].safe = false;
-  } else {
-    // Right
-    possibleMoves[3].safe = false;
-  }
+  // Don't fold my head inside out or bite my body
+  my.body.forEach((bodyPart) => {
+    if (my.head.y < bodyPart.y) {
+      // Up
+      possibleMoves[0].safe = false;
+    }
+
+    if (my.head.y > bodyPart.y) {
+      // Down
+      possibleMoves[1].safe = false;
+    }
+
+    if (my.head.x > bodyPart.x) {
+      // Left
+      possibleMoves[2].safe = false;
+    }
+
+    if (my.head.x < bodyPart.x) {
+      // Right
+      possibleMoves[3].safe = false;
+    }
+  });
 
   /**
    * These two work this way be cause if the head is at one edge
