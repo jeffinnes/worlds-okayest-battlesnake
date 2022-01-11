@@ -47,7 +47,7 @@ function move(req, res) {
   });
 
   /**
-   * These two work this way be cause if the head is at one edge
+   * These two work this way because if the head is at one edge
    * it cannot possibly be at the other edge too.
    * (But could be in a corner which is why I check x and y on every turn)
    * If this ever changes we will need to check all four ever time.
