@@ -70,8 +70,8 @@ function move(req, res) {
   const safeMoves = possibleMoves.filter((possibleMove) => possibleMove.safe);
 
   const i = Math.floor(Math.random() * safeMoves.length);
-  logger.info(my);
-  logger.info(board);
+  logger.info(JSON.stringify(my));
+  logger.info(JSON.stringify(board));
   logger.info(`GameID: ${game.id} | Turn: ${turn} | Moved ${safeMoves[i].move}`);
 
   res.json({
