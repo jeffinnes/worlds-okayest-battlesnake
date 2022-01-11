@@ -63,7 +63,7 @@ function move(req, res) {
   // Don't leave the board through the left or right. It's death out there.
   if (my.head.x === 0) {
     possibleMoves[2].safe = false;
-  } else if (my.head.x === (board.height - 1)) {
+  } else if (my.head.x === (board.width - 1)) {
     possibleMoves[3].safe = false;
   }
 
